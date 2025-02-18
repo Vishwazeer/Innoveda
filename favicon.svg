@@ -1,0 +1,43 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Gradient Definition -->
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+        <!-- Glow Effect -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Background Circle with thicker stroke -->
+    <circle cx="256" cy="256" r="240" fill="url(#grad)" stroke="white" stroke-width="12"/>
+
+    <!-- Simplified Heart Shape -->
+    <path d="M256 360
+        C 236 360, 140 280, 140 200
+        C 140 160, 170 140, 200 140
+        C 230 140, 245 160, 256 190
+        C 267 160, 282 140, 312 140
+        C 342 140, 372 160, 372 200
+        C 372 280, 276 360, 256 360Z" 
+        fill="white" filter="url(#glow)"/>
+
+    <!-- Simplified Music Note -->
+    <path d="M280 190
+        L280 290
+        C280 312, 260 330, 235 330
+        C210 330, 190 312, 190 290
+        C190 268, 210 250, 235 250
+        C245 250, 255 253, 262 258
+        L262 180
+        L320 165
+        L320 200
+        L280 210Z"
+        fill="white" filter="url(#glow)"/>
+</svg> 

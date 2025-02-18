@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Vitals Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="monitor-styles.css">
+    <!-- Add Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body class="monitor-page">
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-link">Mood Quiz</a>
+        <a href="monitor.html" class="nav-link active">Vitals Monitor</a>
+    </nav>
+    
+    <div class="monitor-container">
+        <h1>Real-time Vitals Monitor</h1>
+        
+        <div class="vitals-grid">
+            <div class="vital-card ecg-card">
+                <div class="vital-header">
+                    <h2>ECG Monitor</h2>
+                    <span class="status-indicator">Recording</span>
+                </div>
+                <div class="static-graph-container">
+                    <iframe 
+                        src="https://thingspeak.mathworks.com/channels/2716311/charts/1?bgcolor=%23ffffff&color=%23667eea&dynamic=true&results=60&type=line&update=15" 
+                        class="thingspeak-graph"
+                        frameborder="0">
+                    </iframe>
+                    <div class="grid-overlay"></div>
+                </div>
+            </div>
+
+            <div class="vital-card">
+                <div class="vital-header">
+                    <h2>SPO2 Level</h2>
+                    <span class="status-indicator">Monitoring</span>
+                </div>
+                <div class="spo2-container">
+                    <div class="spo2-value">98<span class="unit">%</span></div>
+                    <div class="static-graph-container">
+                        <iframe 
+                            src="https://thingspeak.mathworks.com/channels/2716311/charts/2?bgcolor=%23ffffff&color=%23764ba2&dynamic=true&results=60&type=line&update=15" 
+                            class="thingspeak-graph"
+                            frameborder="0">
+                        </iframe>
+                        <div class="grid-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vital-card">
+                <div class="vital-header">
+                    <h2>Heart Rate</h2>
+                    <span class="status-indicator">Active</span>
+                </div>
+                <div class="heart-rate-container">
+                    <div class="heart-icon">❤️</div>
+                    <div class="rate-display">
+                        <div id="heartRate">72</div>
+                        <div class="unit">BPM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="monitors.js"></script>
+</body>
+</html> 
